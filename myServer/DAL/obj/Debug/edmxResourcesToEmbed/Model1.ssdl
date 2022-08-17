@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PandoLogicModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tbl_jobs">
+    <Key>
+      <PropertyRef Name="jobNum" />
+    </Key>
+    <Property Name="jobNum" Type="int" Nullable="false" />
+    <Property Name="beginDate" Type="date" />
+    <Property Name="endDate" Type="date" />
+  </EntityType>
+  <EntityType Name="tbl_views">
+    <Key>
+      <PropertyRef Name="viewNum" />
+    </Key>
+    <Property Name="viewNum" Type="int" Nullable="false" />
+    <Property Name="jobNum" Type="int" />
+    <Property Name="date" Type="date" />
+  </EntityType>
+  <Association Name="FK_tbl_views_tbl_jobs">
+    <End Role="tbl_jobs" Type="Self.tbl_jobs" Multiplicity="0..1" />
+    <End Role="tbl_views" Type="Self.tbl_views" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_jobs">
+        <PropertyRef Name="jobNum" />
+      </Principal>
+      <Dependent Role="tbl_views">
+        <PropertyRef Name="jobNum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PandoLogicModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_jobs" EntityType="Self.tbl_jobs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_views" EntityType="Self.tbl_views" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tbl_views_tbl_jobs" Association="Self.FK_tbl_views_tbl_jobs">
+      <End Role="tbl_jobs" EntitySet="tbl_jobs" />
+      <End Role="tbl_views" EntitySet="tbl_views" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

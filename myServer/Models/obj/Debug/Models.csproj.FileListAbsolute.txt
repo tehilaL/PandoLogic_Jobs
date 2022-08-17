@@ -1,0 +1,6 @@
+C:\Users\Groups\Desktop\pandoLogic\myServer\Models\bin\Debug\Models.dll
+C:\Users\Groups\Desktop\pandoLogic\myServer\Models\bin\Debug\Models.pdb
+C:\Users\Groups\Desktop\pandoLogic\myServer\Models\obj\Debug\Models.csprojAssemblyReference.cache
+C:\Users\Groups\Desktop\pandoLogic\myServer\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+C:\Users\Groups\Desktop\pandoLogic\myServer\Models\obj\Debug\Models.dll
+C:\Users\Groups\Desktop\pandoLogic\myServer\Models\obj\Debug\Models.pdb

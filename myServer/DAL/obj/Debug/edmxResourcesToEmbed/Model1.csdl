@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PandoLogicModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbl_jobs">
+    <Key>
+      <PropertyRef Name="jobNum" />
+    </Key>
+    <Property Name="jobNum" Type="Int32" Nullable="false" />
+    <Property Name="beginDate" Type="DateTime" Precision="0" />
+    <Property Name="endDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tbl_views" Relationship="Self.FK_tbl_views_tbl_jobs" FromRole="tbl_jobs" ToRole="tbl_views" />
+  </EntityType>
+  <EntityType Name="tbl_views">
+    <Key>
+      <PropertyRef Name="viewNum" />
+    </Key>
+    <Property Name="viewNum" Type="Int32" Nullable="false" />
+    <Property Name="jobNum" Type="Int32" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tbl_jobs" Relationship="Self.FK_tbl_views_tbl_jobs" FromRole="tbl_views" ToRole="tbl_jobs" />
+  </EntityType>
+  <Association Name="FK_tbl_views_tbl_jobs">
+    <End Role="tbl_jobs" Type="Self.tbl_jobs" Multiplicity="0..1" />
+    <End Role="tbl_views" Type="Self.tbl_views" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_jobs">
+        <PropertyRef Name="jobNum" />
+      </Principal>
+      <Dependent Role="tbl_views">
+        <PropertyRef Name="jobNum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="JobsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="tbl_jobs" EntityType="Self.tbl_jobs" />
+    <EntitySet Name="tbl_views" EntityType="Self.tbl_views" />
+    <AssociationSet Name="FK_tbl_views_tbl_jobs" Association="Self.FK_tbl_views_tbl_jobs">
+      <End Role="tbl_jobs" EntitySet="tbl_jobs" />
+      <End Role="tbl_views" EntitySet="tbl_views" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

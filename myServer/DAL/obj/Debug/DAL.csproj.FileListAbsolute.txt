@@ -1,0 +1,14 @@
+C:\Users\Groups\Desktop\pandoLogic\myServer\DAL\bin\Debug\DAL.dll.config
+C:\Users\Groups\Desktop\pandoLogic\myServer\DAL\bin\Debug\DAL.dll
+C:\Users\Groups\Desktop\pandoLogic\myServer\DAL\bin\Debug\DAL.pdb
+C:\Users\Groups\Desktop\pandoLogic\myServer\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Groups\Desktop\pandoLogic\myServer\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Groups\Desktop\pandoLogic\myServer\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Groups\Desktop\pandoLogic\myServer\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Groups\Desktop\pandoLogic\myServer\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\Groups\Desktop\pandoLogic\myServer\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Groups\Desktop\pandoLogic\myServer\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Groups\Desktop\pandoLogic\myServer\DAL\obj\Debug\DAL.dll
+C:\Users\Groups\Desktop\pandoLogic\myServer\DAL\obj\Debug\DAL.pdb
+C:\Users\Groups\Desktop\pandoLogic\myServer\DAL\bin\Debug\System.Data.SqlClient.dll
+C:\Users\Groups\Desktop\pandoLogic\myServer\DAL\bin\Debug\System.Data.SqlClient.xml
